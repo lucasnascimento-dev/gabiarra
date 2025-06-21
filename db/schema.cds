@@ -24,3 +24,8 @@ entity Acompanhamentos : cuid {
     status : Association to Status;
     coleta : Association to Coletas;
 }
+
+entity Status : cuid {
+    key status : String(10);
+    descricao : String(255);
+}
