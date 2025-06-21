@@ -23,3 +23,11 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+### Modelagem de dados
+O projeto possui uma modelagem de dados que representa o processo de gestão de coletas, pedidos e seus acompanhamentos.
+
+### Estrutura dos relacionamentos
+- Uma coleta pode ter vários pedidos
+- Uma coleta pode ter muitos acompanhamentos
+- Cada acompanhamento possui um status 
