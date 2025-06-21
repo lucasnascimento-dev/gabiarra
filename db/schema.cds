@@ -10,4 +10,9 @@ entity Coletas : cuid, managed {
                               on pedidos.
     }
 
-
+entity Pedidos {
+    key id            : UUID;
+        numero_pedido : String(225);
+        item_pedido   : String(225);
+        valor_pedido  : Decimal(12, 2);
+}
