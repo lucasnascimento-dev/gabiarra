@@ -4,7 +4,7 @@ using {managed} from '@sap/cds/common';
 namespace vendas;
 
 entity Coletas : cuid, managed {
-    key cnpj_fornecedor : String(14);
+    key cnpj_fornecedor : String(100);
         transportadora  : String(100);
         
         pedidos         : Composition of many Pedidos
