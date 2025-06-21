@@ -1,0 +1,239 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Coletas
+# @name Coletas_GET
+GET {{server}}/odata/v4/my/Coletas
+//Authorization: Basic {{username}} {{password}}
+
+
+### Coletas
+# @name Coletas_POST
+POST {{server}}/odata/v4/my/Coletas
+Content-Type: application/json
+//Authorization: Basic {{username}} {{password}}
+
+{
+  "cnpj_fornecedor": "letas-26030036",
+  "ID": "26030036-8ca8-4139-97d1-244a64cf1882",
+  "transportadora": "transportadora-26030036",
+  "pedidos": [
+    {
+      "ID": "29262264-171e-41c6-b6dc-cfeeb5f85652",
+      "numero_pedido": "numero_pedido-29262264",
+      "item_pedido": "item_pedido-29262264",
+      "valor_pedido": 24197238.23
+    },
+    {
+      "ID": "29262265-a8ea-4436-85ed-b93332bf783b",
+      "numero_pedido": "numero_pedido-29262265",
+      "item_pedido": "item_pedido-29262265",
+      "valor_pedido": 12973901.17
+    }
+  ],
+  "aconpanhamento": [
+    {
+      "ID": "17960158-8e1f-43a2-a48f-b7d932b1ebf4",
+      "data_comentario": "2021-06-05T00:00:00.000Z",
+      "status": {
+        "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+        "status": "s-23699817"
+      }
+    },
+    {
+      "ID": "17960159-4257-4e2a-a14b-bbdcd98eaefe",
+      "data_comentario": "2021-05-15T00:00:00.000Z",
+      "status": {
+        "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+        "status": "s-23699817"
+      }
+    }
+  ],
+  "createdAt": "2007-12-08T00:00:00.000Z",
+  "createdBy": "createdBy.fhwwk@example.org",
+  "modifiedAt": "2021-12-10T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.fhwwk@example.net"
+}
+
+
+### Coletas
+# @name Coletas_PATCH
+PATCH {{server}}/odata/v4/my/Coletas(ID=26030036-8ca8-4139-97d1-244a64cf1882,cnpj_fornecedor='letas-26030036')
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "cnpj_fornecedor": "letas-26030036",
+  "ID": "26030036-8ca8-4139-97d1-244a64cf1882",
+  "transportadora": "transportadora-26030036",
+  "pedidos": [
+    {
+      "ID": "29262264-171e-41c6-b6dc-cfeeb5f85652",
+      "numero_pedido": "numero_pedido-29262264",
+      "item_pedido": "item_pedido-29262264",
+      "valor_pedido": 24197238.23
+    },
+    {
+      "ID": "29262265-a8ea-4436-85ed-b93332bf783b",
+      "numero_pedido": "numero_pedido-29262265",
+      "item_pedido": "item_pedido-29262265",
+      "valor_pedido": 12973901.17
+    }
+  ],
+  "aconpanhamento": [
+    {
+      "ID": "17960158-8e1f-43a2-a48f-b7d932b1ebf4",
+      "data_comentario": "2021-06-05T00:00:00.000Z",
+      "status": {
+        "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+        "status": "s-23699817"
+      }
+    },
+    {
+      "ID": "17960159-4257-4e2a-a14b-bbdcd98eaefe",
+      "data_comentario": "2021-05-15T00:00:00.000Z",
+      "status": {
+        "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+        "status": "s-23699817"
+      }
+    }
+  ],
+  "createdAt": "2007-12-08T00:00:00.000Z",
+  "createdBy": "createdBy.fhwwk@example.org",
+  "modifiedAt": "2021-12-10T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.fhwwk@example.net"
+}
+
+
+### Coletas
+# @name Coletas_DELETE
+DELETE {{server}}/odata/v4/my/Coletas(ID=26030036-8ca8-4139-97d1-244a64cf1882,cnpj_fornecedor='letas-26030036')
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+
+### Pedidos
+# @name Pedidos_GET
+GET {{server}}/odata/v4/my/Pedidos
+//Authorization: Basic {{username}} {{password}}
+
+
+### Pedidos
+# @name Pedidos_POST
+POST {{server}}/odata/v4/my/Pedidos
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "ID": "29262264-171e-41c6-b6dc-cfeeb5f85652",
+  "numero_pedido": "numero_pedido-29262264",
+  "item_pedido": "item_pedido-29262264",
+  "valor_pedido": 24197238.23
+}
+
+
+### Pedidos
+# @name Pedidos_PATCH
+PATCH {{server}}/odata/v4/my/Pedidos/29262264-171e-41c6-b6dc-cfeeb5f85652
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "ID": "29262264-171e-41c6-b6dc-cfeeb5f85652",
+  "numero_pedido": "numero_pedido-29262264",
+  "item_pedido": "item_pedido-29262264",
+  "valor_pedido": 24197238.23
+}
+
+
+### Pedidos
+# @name Pedidos_DELETE
+DELETE {{server}}/odata/v4/my/Pedidos/29262264-171e-41c6-b6dc-cfeeb5f85652
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+
+### Acompanhamentos
+# @name Acompanhamentos_GET
+GET {{server}}/odata/v4/my/Acompanhamentos
+//Authorization: Basic {{username}} {{password}}
+
+
+### Acompanhamentos
+# @name Acompanhamentos_POST
+POST {{server}}/odata/v4/my/Acompanhamentos
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "ID": "17960158-8e1f-43a2-a48f-b7d932b1ebf4",
+  "data_comentario": "2021-06-05T00:00:00.000Z",
+  "status": {
+    "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+    "status": "s-23699817"
+  }
+}
+
+
+### Acompanhamentos
+# @name Acompanhamentos_PATCH
+PATCH {{server}}/odata/v4/my/Acompanhamentos/17960158-8e1f-43a2-a48f-b7d932b1ebf4
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "ID": "17960158-8e1f-43a2-a48f-b7d932b1ebf4",
+  "data_comentario": "2021-06-05T00:00:00.000Z",
+  "status": {
+    "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+    "status": "s-23699817"
+  }
+}
+
+
+### Acompanhamentos
+# @name Acompanhamentos_DELETE
+DELETE {{server}}/odata/v4/my/Acompanhamentos/17960158-8e1f-43a2-a48f-b7d932b1ebf4
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+
+### Status
+# @name Status_GET
+GET {{server}}/odata/v4/my/Status
+Authorization: Basic {{username}} {{password}}
+
+
+### Status
+# @name Status_POST
+POST {{server}}/odata/v4/my/Status
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "status": "s-23699817",
+  "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+  "descricao": "descricao-23699817"
+}
+
+
+### Status
+# @name Status_PATCH
+PATCH {{server}}/odata/v4/my/Status(ID=23699817-2059-472a-9db1-b2563c7ed913,status='s-23699817')
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+{
+  "status": "s-23699817",
+  "ID": "23699817-2059-472a-9db1-b2563c7ed913",
+  "descricao": "descricao-23699817"
+}
+
+
+### Status
+# @name Status_DELETE
+DELETE {{server}}/odata/v4/my/Status(ID=23699817-2059-472a-9db1-b2563c7ed913,status='s-23699817')
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
