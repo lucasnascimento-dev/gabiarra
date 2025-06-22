@@ -31,3 +31,12 @@ O projeto possui uma modelagem de dados que representa o processo de gestão de 
 - Uma coleta pode ter vários pedidos
 - Uma coleta pode ter muitos acompanhamentos
 - Cada acompanhamento possui um status 
+
+### Validação de CNPJ com a API do BrasilAPI
+Foi implementada uma regra de validação no backend que verifica a existência do CNPJ do fornecedor antes de criar uma coleta.
+
+- No evento "before CREATE" da entidade Coletas, é executada uma chamada para a API BrasilAPI;
+- A função asíncrona criada garante que O CNPJ informado seja válido;
+    - Para CNPJ inexistente ou inválido a Coleta não é criada e um erro é lançado;
+    - Caso o CNPJ não seja informado é lançado uma mensagem informando que o CNPJ é obrigatório;
+    - Caso seja passado algo além de números uma mensagem é lançado um erro informando que o campo só aceita números.
