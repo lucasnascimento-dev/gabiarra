@@ -1,13 +1,16 @@
 const cds = require('@sap/cds');
-const { message } = require('@sap/cds/lib/log/cds-error');
 
 module.exports = class CNPJCheck extends cds.ApplicationService {
     init() {
-        this.on("teste", (req) => {
-            console.log("Conteúdo req: ", req.data)
-            return {
-                message: "req no console",
-                receiveData: req.data
+        this.before("CREATE", "Coleta", (req) => {
+            console.log(req.data);
+
+            if (!cnpj_fornecedor) {
+                return req.error(400, "CNPJ do fornecedor é obrigatório.")
+            }
+
+            if (!validarCNPJ(cnpj_fornecedor)) {
+                return req.error(400, "CNPJ Inválido.")
             }
         })
 
