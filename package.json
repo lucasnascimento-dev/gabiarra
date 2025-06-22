@@ -18,5 +18,15 @@
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "BrasilAPI_CNPJ": {
+        "kind": "rest",
+        "credentials": {
+          "url": "https://brasilapi.com.br/api/cnpj/v1"
+        }
+      }
+    }
   }
 }
