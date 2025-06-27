@@ -6,7 +6,7 @@
 ### Coletas
 # @name Coletas_GET
 GET {{server}}/odata/v4/my/Coletas
-//Authorization: Basic {{username}} {{password}}
+Authorization: Basic {{username}} {{password}}
 
 
 ### Coletas
@@ -60,9 +60,9 @@ Content-Type: application/json
 
 ### Coletas
 # @name Coletas_PATCH
-PATCH {{server}}/odata/v4/my/Coletas(ID=26030036-8ca8-4139-97d1-244a64cf1882,cnpj_fornecedor='letas-26030036')
+PATCH {{server}}/odata/v4/my/Coletas(ID='24790055-e661-4f5f-9e7d-e6cc129b2764',cnpj_fornecedor='Coletas-24790055')
 Content-Type: application/json
-Authorization: Basic {{username}} {{password}}
+//Authorization: Basic {{username}} {{password}}
 
 {
   "cnpj_fornecedor": "letas-26030036",
