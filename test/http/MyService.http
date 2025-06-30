@@ -16,7 +16,7 @@ Content-Type: application/json
 //Authorization: Basic {{username}} {{password}}
 
 {
-  "cnpj_fornecedor": "letas-26030036",
+  "cnpj_fornecedor": "26030036000000",
   "ID": "26030036-8ca8-4139-97d1-244a64cf1882",
   "transportadora": "transportadora-26030036",
   "pedidos": [
