@@ -33,7 +33,7 @@ Content-Type: application/json
       "valor_pedido": 12973901.17
     }
   ],
-  "aconpanhamento": [
+  "acompanhamentos": [
     {
       "ID": "17960158-8e1f-43a2-a48f-b7d932b1ebf4",
       "data_comentario": "2021-06-05T00:00:00.000Z",
