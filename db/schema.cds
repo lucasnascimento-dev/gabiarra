@@ -27,6 +27,6 @@ entity Acompanhamentos : cuid {
 }
 
 entity Status : cuid {
-    key status    : String(10);
+    key status    : String(25);
         descricao : String(255);
 }

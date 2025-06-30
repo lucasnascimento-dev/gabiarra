@@ -6,7 +6,7 @@
 ### Coletas
 # @name Coletas_GET
 GET {{server}}/odata/v4/my/Coletas
-Authorization: Basic {{username}} {{password}}
+//Authorization: Basic {Lucas} {Inicial@123}
 
 
 ### Coletas
@@ -16,7 +16,7 @@ Content-Type: application/json
 //Authorization: Basic {{username}} {{password}}
 
 {
-  "cnpj_fornecedor": "26030036000000",
+  "cnpj_fornecedor": "13774093000153",
   "ID": "26030036-8ca8-4139-97d1-244a64cf1882",
   "transportadora": "transportadora-26030036",
   "pedidos": [
