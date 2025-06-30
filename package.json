@@ -6,6 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^4.0.2",
+    "@sap-cloud-sdk/resilience": "^4.0.2",
     "@sap/cds": "^9",
     "axios": "^1.10.0",
     "express": "^4",
@@ -34,11 +36,15 @@
         "users": {
           "Lucas": {
             "password": "Inicial@123",
-            "roles": ["fornecedor"]
+            "roles": [
+              "fornecedor"
+            ]
           },
-          "Pedro":{
+          "Pedro": {
             "password": "Inicial@123",
-            "roles": ["transportador"]
+            "roles": [
+              "transportador"
+            ]
           }
         }
       }
