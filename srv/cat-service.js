@@ -51,7 +51,8 @@ class MyServices extends cds.ApplicationService {
                     SELECT.one.from(Coletas).alias('c') // Busca uma coleta
                         .join(Acompanhamentos).alias('a').on('a.coleta_ID = c.ID') // Adicoina os acompanhamentos da coleta
                         .join(Status).alias('s').on('a.status_status = s.status') // Adiciona Status do acompanhamento
-                        .where('s.status in', validStatusCriacao)
+                        .where('s.status in', validStatusCriacao) 
+                        .and('c_cnpj_fornecedor =', cnpj) // Filtra pelo mesmo fornecedor da coleta atual
                         .and(`EXISTS (SELECT 1 FROM vendas.pedidos p WHERE p.coleta_ID = c.ID AND p.ID in`, pedidosId, ')') // Só retorna se tiver pedidos associados a coleta
                 )
 
