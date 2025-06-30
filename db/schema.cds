@@ -9,8 +9,8 @@ entity Coletas : cuid, managed {
         
         pedidos         : Composition of many Pedidos
                               on pedidos.coleta = $self;
-        aconpanhamentos  : Composition of many Acompanhamentos
-                              on aconpanhamentos.coleta = $self
+        acompanhamentos  : Composition of many Acompanhamentos
+                              on acompanhamentos.coleta = $self
 }
 
 entity Pedidos : cuid {
