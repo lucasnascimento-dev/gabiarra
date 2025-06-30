@@ -28,7 +28,7 @@ const validStatusCriacao = ['Criada', 'Encaminhada', 'Aceita', 'Rejeitada', 'Col
 
 class MyServices extends cds.ApplicationService {
     init() {
-        const { Coletas, Pedidos, Acompanhamentos } = this.entities
+        const { Coletas, Pedidos, Acompanhamentos, Status } = this.entities
 
         // Validação de CNPJ e status e status de coleta ao criar
         this.before("POST", Coletas, async (req) => {
@@ -57,10 +57,11 @@ class MyServices extends cds.ApplicationService {
             if (pedidos) {
                 const pedidosId = pedidos.map(pedido => pedido.ID) // Captura apenas os IDs dos pedidos
                 // console.log(`IDs dos pedidos: ${JSON.stringify(pedidosId)}`)
+                console.log('pedidosID definido')
                 const coletaExistente = await cds.run(
                     SELECT.one.from(Coletas).alias('c') // Busca uma coleta
-                        .join(Acompanhamentos).alias('a').on('a.coleta_ID = c.ID') // Adicoina os acompanhamentos da coleta
-                        .join(Status).alias('s').on('a.status_status = s.status') // Adiciona Status do acompanhamento
+                        .join(Acompanhamentos).alias('a').on('a.coleta = c') // Adicoina os acompanhamentos da coleta
+                        .join(Status).alias('s').on('a.status = s') // Adiciona Status do acompanhamento
                         .where('s.status in', validStatusCriacao) 
                         .and('c_cnpj_fornecedor =', cnpj) // Filtra pelo mesmo fornecedor da coleta atual
                         .and(`EXISTS (SELECT 1 FROM vendas.pedidos p WHERE p.coleta_ID = c.ID AND p.ID in`, pedidosId, ')') // Só retorna se tiver pedidos associados a coleta
