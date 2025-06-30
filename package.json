@@ -26,7 +26,7 @@
       "BrasilAPI_CNPJ": {
         "kind": "rest",
         "credentials": {
-          "url": "https://brasilapi.com.br/api/cnpj/v1"
+          "url": "https://brasilapi.com.br/api"
         }
       },
       "auth": {
